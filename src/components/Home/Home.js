@@ -1,7 +1,9 @@
 import React from 'react'
 import Hero from './Hero/Hero'
 import Iconic from './IconicCard/Iconic'
-import Service from './Service/Service'
+import MakeAppointment from './MakeApoinment/MakeApinment'
+import Phone from './Phone/Phone'
+import Service from './Service/Serivces'
 
 function Home() {
   return (
@@ -9,6 +11,9 @@ function Home() {
         <Hero/>
         <Iconic/>
         <Service/>
+        <MakeAppointment/>
+        <Phone></Phone>
+   
     </div>
   )
 }

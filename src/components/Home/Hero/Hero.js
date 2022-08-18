@@ -10,7 +10,7 @@ function Hero() {
     <div>
       <h1 class="text-5xl font-bold">Your New Smile Starts Here</h1>
       <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button class="btn btn-info text-white">Appointment</button>
+      <button class="btn btn-secondary text-white">Appointment</button>
     </div>
   </div>
 </div>
