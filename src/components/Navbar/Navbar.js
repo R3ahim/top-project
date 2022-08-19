@@ -19,11 +19,11 @@ function Navbar() {
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal p-0">
    <li> <Link to={'/home'}>Home</Link></li>
-   <li> <Link to={'/home'}>Appointment</Link></li>
+   <li> <Link to={'/appointment'}>Appointment</Link></li>
    <li> <Link to={'/home'}>Reveiw</Link></li>
    <li> <Link to={'/home'}>Dashbaord</Link></li>
    <li> <Link to={'/home'}>contact</Link></li>
-   <li> <Link to={'/home'}>Login</Link></li>
+   <li> <Link to={'/login'}>Login</Link></li>
     </ul>
   </div>
   
