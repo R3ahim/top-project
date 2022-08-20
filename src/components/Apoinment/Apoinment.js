@@ -3,7 +3,7 @@ import React from 'react'
 function Apoinment() {
   return (
     <div>
-        <h1 className='font-bold text-4xl text-secondary text-center'>Apoinment</h1>
+       <h1>nothing anything we can handle that one is the next melia devo underst</h1>
     </div>
   )
 }

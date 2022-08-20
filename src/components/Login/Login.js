@@ -2,10 +2,17 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from "../../firebase.init";
 
 
 const Login = () => {
-
+  const [
+    signInWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useSignInWithEmailAndPassword(auth);
 
   const navigate = useNavigate();
   const {
@@ -17,8 +24,12 @@ const Login = () => {
  
   const handleLogin = (data) => {
     const { email, password } = data;
-    console.log(email,password)
+     signInWithEmailAndPassword(email,password)
+     console.log(user)
   };
+  if(loading){
+    return <h2 className="text-2xl font-bold text-cetner">loading...</h2>
+  }
 
   return (
     <div className="min-h-screen mx-auto container flex items-center justify-center">

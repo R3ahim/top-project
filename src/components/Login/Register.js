@@ -2,10 +2,18 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from "../../firebase.init";
 
 
 const Register = () => {
 
+  const [
+    createUserWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useCreateUserWithEmailAndPassword(auth);
 
   const navigate = useNavigate();
   const {
@@ -17,8 +25,12 @@ const Register = () => {
  
   const handleLogin = (data) => {
     const { email, password } = data;
-    console.log(email,password)
+  createUserWithEmailAndPassword(email,password)
+
+  
   };
+console.log(user)
+ 
 
   return (
     <div className="min-h-screen mx-auto container flex items-center justify-center">
@@ -34,28 +46,15 @@ const Register = () => {
             <h3 className="text-3xl">Register</h3>
           </div>
           <form onSubmit={handleSubmit(handleLogin)}>
-            <input
-              placeholder="Your Name"
-              class="input w-full block mb-3"
-              {...register("name", {
-                pattern: {
-                  value:
-                    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                  message: "Please provide a valid you Full name",
-                },
-                required: {
-                  value: true,
-                  message: "Name is required",
-                },
-              })}
-            />
+          <input
+              placeholder="Email"
+              class="input w-full block mb-3"/>
             <input
               placeholder="Email"
               class="input w-full block mb-3"
               {...register("email", {
                 pattern: {
-                  value:
-                    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                 
                   message: "Please provide a valid email",
                 },
                 required: {
